@@ -8,3 +8,6 @@ vim.opt.tabstop = 4
 
 -- Clipboard
 vim.opt.clipboard = "unnamedplus"
+
+-- Line Endings
+vim.opt.fileformats = "unix"
