@@ -12,3 +12,6 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Line Endings
 vim.opt.fileformats = "unix"
+
+-- Color Scheme
+vim.cmd('colorscheme habamax')
