@@ -34,8 +34,13 @@ wezterm.on("format-tab-title", function(tab, tabs, pane, config, hover, max_widt
   })
 end)
 
+-- Appearance (Windows)
 config.window_background_opacity = 0.85
 config.win32_system_backdrop = 'Acrylic'
+
+-- Domains
+local domains = require("wez.domains")
+config.exec_domains = domains
 
 -- Return the configuration to WezTerm
 return config
