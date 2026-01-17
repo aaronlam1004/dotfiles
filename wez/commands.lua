@@ -3,7 +3,7 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 
 -- Connect to serial port command
-local function connect_to_serial(window, pane, line)
+local function connect_to_serial_115200(window, pane, line)
   if line then
     window:mux_window():spawn_tab({
       args = { "tio", line, "-b", "115200" } 
@@ -19,7 +19,7 @@ local commands = {
     action = act.Multiple {
       act.PromptInputLine {
         description = "Connect to serial port",
-        action = wezterm.action_callback(connect_to_serial)
+        action = wezterm.action_callback(connect_to_serial_115200)
       }
     }
   }
