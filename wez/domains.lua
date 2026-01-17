@@ -6,16 +6,16 @@ local function get_label(domain_name)
   return domain_name
 end
 
--- Example execution command
-local function cmd_exec(cmd)
-  local args = {}
+-- PowerShell Domain
+local function powershell_domain(cmd)
+  local args = { "powershell" }
   cmd.args = args
   return cmd
 end
 
 -- Add custom domains here
 local domains = {
-  -- wezterm.exec_domain("cmd-exec", cmd_exec, get_label)
+  wezterm.exec_domain("PowerShell", powershell_domain, get_label)
 }
 
 return domains

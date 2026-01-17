@@ -1,3 +1,7 @@
+-- Imports
+local domains = require("wez.domains")
+local commands = require("wez.commands")
+
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
@@ -12,6 +16,7 @@ config.initial_rows = 28
 config.font_size = 10
 
 -- [Color Scheme]
+config.color_scheme = "arcoiris"
 
 -- [Shell]
 
@@ -20,17 +25,13 @@ config.tab_bar_at_bottom = true
 
 -- [Tab Bar]
 -- Icons
-local SOlID_LEFT_ARROW = wezterm.nerdfonts.pl_right_divider
-local SOlID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_divider
-local process_icons = {
-  ['bash'] = wezterm.nerdfonts.dev_terminal
-}
+local TERMINAL = wezterm.nerdfonts.dev_terminal
 
 -- Tab Bar Styling
 wezterm.on("format-tab-title", function(tab, tabs, pane, config, hover, max_width)
   return wezterm.format({
-    { Text = wezterm.nerdfonts.dev_terminal },
-    { Text = "  aaron@AL" }
+    { Text = TERMINAL },
+    { Text = "  aaron@AL" },
   })
 end)
 
@@ -39,8 +40,13 @@ config.window_background_opacity = 0.85
 config.win32_system_backdrop = 'Acrylic'
 
 -- Domains
-local domains = require("wez.domains")
 config.exec_domains = domains
+
+-- Commands
+local act = wezterm.action
+wezterm.on("augment-command-palette", function(window, pane)
+  return commands
+end)
 
 -- Return the configuration to WezTerm
 return config
