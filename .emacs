@@ -2,6 +2,9 @@
 (setq custom-file "~/.emacs.custom.el")
 (load custom-file)
 
+;; Auto-update configuration
+(global-auto-revert-mode -1)
+
 ;; Line Endings
 (setq default-buffer-file-coding-system 'utf-8-unix)
 
@@ -23,3 +26,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.local/themes")
 (setq catppuccin-flavor 'mocha)
 (load-theme 'catppuccin t)
+
+;; Tabs
+(setq-default indent-tabs-mode nil)
+(electric-indent-mode -1);
