@@ -30,3 +30,7 @@
 ;; Tabs
 (setq-default indent-tabs-mode nil)
 (electric-indent-mode -1);
+
+;; Modes
+(add-to-list 'load-path "~/.emacs.local/modes")
+(require 'lua-mode)
