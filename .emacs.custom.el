@@ -14,7 +14,7 @@
  '(global-display-line-numbers-mode t)
  '(global-whitespace-mode t)
  '(tool-bar-mode nil)
- '(whitespace-style '(space-mark tab-mark)))
+ '(whitespace-style '(tab-mark)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
