@@ -11,18 +11,5 @@ local function connect_to_serial_115200(window, pane, line)
   end
 end
 
--- List of commands
-local commands = {
-  {
-    brief = "Serial: Connect (Baud 115200)",
-    icon = "md_serial_port",
-    action = act.Multiple {
-      act.PromptInputLine {
-        description = "Connect to serial port",
-        action = wezterm.action_callback(connect_to_serial_115200)
-      }
-    }
-  }
-}
 
 return commands
