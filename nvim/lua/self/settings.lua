@@ -14,7 +14,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.fileformats = "unix"
 
 -- Color Scheme
-vim.cmd('colorscheme habamax')
+vim.cmd('colorscheme sorbet')
 
 -- Transparent background
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
