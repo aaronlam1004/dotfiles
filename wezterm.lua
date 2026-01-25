@@ -18,7 +18,11 @@ config.font_size = 10
 -- [Color Scheme]
 config.color_scheme = "Catppuccin Mocha"
 
+-- [Window]
+config.window_decorations = "NONE | RESIZE"
+
 -- [Shell]
+config.default_prog = { 'powershell' }
 
 -- [Tabs]
 config.tab_bar_at_bottom = true

@@ -6,6 +6,13 @@ local function get_label(domain_name)
   return domain_name
 end
 
+-- Command Prompt Domain
+local function cmd_prompt_domain(cmd)
+  local args = { "cmd" }
+  cmd.args = args
+  return cmd
+end
+
 -- PowerShell Domain
 local function powershell_domain(cmd)
   local args = { "powershell" }
@@ -29,6 +36,7 @@ end
 
 -- Add custom domains here
 local domains = {
+  wezterm.exec_domain("Command Prompt", cmd_prompt_domain, get_label),
   wezterm.exec_domain("PowerShell", powershell_domain, get_label),
   wezterm.exec_domain("Visual Studio Compiler (x64)", vcvars64_domain, get_label),
   wezterm.exec_domain("Visual Studio Compiler (x86)", vcvars32_domain, get_label)
