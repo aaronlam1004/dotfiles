@@ -18,12 +18,6 @@ config.font_size = 10
 -- [Color Scheme]
 config.color_scheme = "Catppuccin Mocha"
 
--- [Window]
-config.window_decorations = "NONE | RESIZE"
-
--- [Shell]
-config.default_prog = { 'powershell' }
-
 -- [Tabs]
 config.tab_bar_at_bottom = true
 
@@ -41,7 +35,6 @@ end)
 
 -- Appearance (Windows)
 config.window_background_opacity = 0.85
-config.win32_system_backdrop = 'Acrylic'
 
 -- Domains
 config.exec_domains = domains
