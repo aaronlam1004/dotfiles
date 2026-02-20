@@ -1,6 +1,7 @@
 -- Imports
 local domains = require("wez.domains")
 local commands = require("wez.commands")
+local format_tab = require("wez.tab")
 
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
@@ -21,17 +22,8 @@ config.color_scheme = "Catppuccin Mocha"
 -- [Tabs]
 config.tab_bar_at_bottom = true
 
--- [Tab Bar]
--- Icons
-local TERMINAL = wezterm.nerdfonts.dev_terminal
-
 -- Tab Bar Styling
-wezterm.on("format-tab-title", function(tab, tabs, pane, config, hover, max_width)
-  return wezterm.format({
-    { Text = TERMINAL },
-    { Text = "  aaron@AL" },
-  })
-end)
+wezterm.on("format-tab-title", format_tab)
 
 -- Appearance (Windows)
 -- config.window_background_opacity = 0.85
