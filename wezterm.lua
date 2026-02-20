@@ -34,7 +34,7 @@ wezterm.on("format-tab-title", function(tab, tabs, pane, config, hover, max_widt
 end)
 
 -- Appearance (Windows)
-config.window_background_opacity = 0.85
+-- config.window_background_opacity = 0.85
 
 -- Domains
 config.exec_domains = domains
