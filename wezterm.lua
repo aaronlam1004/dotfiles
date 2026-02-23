@@ -26,7 +26,7 @@ config.tab_bar_at_bottom = true
 wezterm.on("format-tab-title", format_tab)
 
 -- Appearance (Windows)
--- config.window_background_opacity = 0.85
+config.window_background_opacity = 0.90
 
 -- Domains
 config.exec_domains = domains
