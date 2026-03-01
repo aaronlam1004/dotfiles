@@ -7,7 +7,8 @@
  '(column-number-mode t)
  '(custom-enabled-themes '(modus-vivendi))
  '(custom-safe-themes
-   '("8d7ecc170b98a159f3dd10652bd72870151b7b46cfa3918fa9bc0da86f799157"
+   '("daa27dcbe26a280a9425ee90dc7458d85bd540482b93e9fa94d4f43327128077"
+     "8d7ecc170b98a159f3dd10652bd72870151b7b46cfa3918fa9bc0da86f799157"
      default))
  '(diff-whitespace-style '(space-mark tab-mark newline-mark) nil (whitespace))
  '(display-line-numbers-type 'relative)

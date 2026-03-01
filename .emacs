@@ -25,8 +25,9 @@
 
 ;; Themes
 (add-to-list 'custom-theme-load-path "~/.emacs.local/themes")
-(setq catppuccin-flavor 'mocha)
-(load-theme 'catppuccin t)
+(add-to-list 'load-path "~/.emacs.local/themes")
+(require 'kanagawa-themes)
+(load-theme 'kanagawa-wave t)
 
 ;; Tabs
 (setq-default indent-tabs-mode nil)
