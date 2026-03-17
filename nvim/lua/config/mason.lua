@@ -2,7 +2,8 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   automatic_enable = {
     'clangd',
-    'lua_ls'
+    'lua_ls',
+    'pyright'
   },
   handlers = {
     function(server_name)
