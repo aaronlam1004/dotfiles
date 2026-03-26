@@ -1,5 +1,9 @@
-vim.opt.background = "dark"
-vim.cmd.colorscheme "oxocarbon"
+-- nightfox
+vim.cmd.colorscheme "nightfox"
+
+-- oxocarbon
+-- vim.opt.background = "dark"
+-- vim.cmd.colorscheme "oxocarbon"
 
 -- Transparent Background
 -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
