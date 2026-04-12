@@ -17,7 +17,7 @@ config.initial_rows = 28
 config.font_size = 10
 
 -- [Color Scheme]
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "nightfox"
 
 -- [Tabs]
 config.tab_bar_at_bottom = true
