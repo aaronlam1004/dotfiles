@@ -6,5 +6,5 @@ return {
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons", -- optional, but recommended
     },
-    lazy = false
+    lazy = true
 }
