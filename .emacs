@@ -26,8 +26,19 @@
 ;; Themes
 (add-to-list 'custom-theme-load-path "~/.emacs.local/themes")
 (add-to-list 'load-path "~/.emacs.local/themes")
-(require 'kanagawa-themes)
-(load-theme 'kanagawa-wave t)
+(add-to-list 'load-path "~/.emacs.local/themes/catppuccin")
+(add-to-list 'load-path "~/.emacs.local/themes/kanagawa")
+(add-to-list 'load-path "~/.emacs.local/themes/doom")
+
+; catpuccin
+
+; Kanagawa
+; (require 'kanagawa-themes)
+; (load-theme 'kanagawa-dragon t)
+
+; Doom
+(require 'doom-themes)
+(load-theme 'doom-spacegrey t)
 
 ;; Tabs
 (setq-default indent-tabs-mode nil)
