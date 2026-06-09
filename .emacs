@@ -38,7 +38,7 @@
 
 ; Doom
 (require 'doom-themes)
-(load-theme 'doom-spacegrey t)
+(load-theme 'doom-city-lights t)
 
 ;; Tabs
 (setq-default indent-tabs-mode nil)
