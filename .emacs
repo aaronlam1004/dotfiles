@@ -30,15 +30,18 @@
 (add-to-list 'load-path "~/.emacs.local/themes/kanagawa")
 (add-to-list 'load-path "~/.emacs.local/themes/doom")
 
-; catpuccin
+; catppuccin
+(require 'catppuccin-theme)
+(setq catppuccin-flavor 'mocha)
+(load-theme 'catppuccin t)
 
 ; Kanagawa
 ; (require 'kanagawa-themes)
 ; (load-theme 'kanagawa-dragon t)
 
 ; Doom
-(require 'doom-themes)
-(load-theme 'doom-city-lights t)
+; (require 'doom-themes)
+; (load-theme 'doom-outrun-electric t)
 
 ;; Tabs
 (setq-default indent-tabs-mode nil)
