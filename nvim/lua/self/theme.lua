@@ -1,13 +1,3 @@
--- vague
--- vim.cmd.colorscheme "vague"
-
--- nightfox
--- vim.cmd.colorscheme "nightfox"
-
--- oxocarbon
--- vim.opt.background = "dark"
--- vim.cmd.colorscheme "oxocarbon"
-
 -- catppuccin
 vim.cmd.colorscheme "catppuccin-mocha"
 
