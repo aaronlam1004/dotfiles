@@ -14,10 +14,10 @@ config.initial_cols = 120
 config.initial_rows = 28
 
 -- [Font]
+config.font = wezterm.font "SF Mono"
 config.font_size = 10
 
 -- [Color Scheme]
-config.color_scheme = "nightfox"
 
 -- [Tabs]
 config.tab_bar_at_bottom = true

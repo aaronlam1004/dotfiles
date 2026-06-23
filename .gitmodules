@@ -1,0 +1,3 @@
+[submodule "SFWindows"]
+	path = SFWindows
+	url = https://github.com/bradleyhodges/SFWindows.git
