@@ -1,3 +1,6 @@
 [submodule "SFWindows"]
 	path = SFWindows
 	url = https://github.com/bradleyhodges/SFWindows.git
+[submodule "SF-Mono-Nerd-Font"]
+	path = SF-Mono-Nerd-Font
+	url = https://github.com/epk/SF-Mono-Nerd-Font.git
