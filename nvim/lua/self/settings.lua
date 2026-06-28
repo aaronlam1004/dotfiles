@@ -11,4 +11,4 @@ vim.opt.tabstop = 4
 vim.opt.clipboard = "unnamedplus"
 
 -- Line Endings
-vim.opt.fileformats = "unix"
+vim.opt.fileformats = "unix,dos"
