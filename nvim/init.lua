@@ -1,6 +1,5 @@
 require('config.lazy')
 require('config.plugins')
-require('config.mason')
 require('config.nvim-cmp')
 require('self.settings')
 require('self.commands')
