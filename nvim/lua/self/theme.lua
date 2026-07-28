@@ -1,5 +1,5 @@
 -- catppuccin
-vim.cmd.colorscheme "catppuccin-mocha"
+vim.cmd.colorscheme "catppuccin-latte"
 
 -- Transparent Background
 -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
