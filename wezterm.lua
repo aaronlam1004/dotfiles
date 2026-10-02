@@ -38,5 +38,29 @@ wezterm.on("augment-command-palette", function(window, pane)
   return commands
 end)
 
+-- Key Bindings
+config.keys = {
+  {
+    key = 'm',
+    mods = 'CTRL',
+    action = wezterm.action.InputSelector {
+      action = wezterm.action_callback(function(window, pane, id, label)
+        pane:send_text(id .. "\r\n")
+      end),
+      title = "Macro",
+      choices = {
+        {
+          label = "ls",
+          id = "ls"
+        },
+        {
+          label = "ls -la",
+          id = "ls -la"
+        }
+      }
+    }
+  }
+}
+
 -- Return the configuration to WezTerm
 return config
