@@ -15,9 +15,10 @@ config.initial_rows = 28
 
 -- [Font]
 config.font = wezterm.font "SF Mono"
-config.font_size = 10
+config.font_size = 11
 
 -- [Color Scheme]
+config.color_scheme = "Kanagawa (Gogh)"
 
 -- [Tabs]
 config.tab_bar_at_bottom = true

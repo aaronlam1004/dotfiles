@@ -1,45 +1,33 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
--- Helper method to get label from domain name
-local function get_label(domain_name)
-  return domain_name
+local domains = {}
+
+-- Helper to make domain function
+local function make_domain_func(exec)
+  return function(cmd)
+    local args = {}
+    for index, arg in ipairs(exec) do
+      table.insert(args, arg)
+    end
+    cmd.args = args
+    return cmd
+  end
 end
 
--- Command Prompt Domain
-local function cmd_prompt_domain(cmd)
-  local args = { "cmd" }
-  cmd.args = args
-  return cmd
-end
+-- Read domains
+local file, err = io.open(".wez/domains.json", 'r')
+if file then
+  local content = file:read("*all")
+  wezterm.log_info(content)
+  file:close()
 
--- PowerShell Domain
-local function powershell_domain(cmd)
-  local args = { "powershell" }
-  cmd.args = args
-  return cmd
+  local data = wezterm.json_parse(content)
+  for index, domain_info in ipairs(data) do
+    wezterm.log_info(domain_info.alias)
+    wezterm.log_info(domain_info.exec)
+    table.insert(domains, wezterm.exec_domain(domain_info.alias, make_domain_func(domain_info.exec), domain_info.alias))
+  end
 end
-
--- Visual Studio Compiler (x64)
-local function vcvars64_domain(cmd)
-  local args = { "cmd.exe", "/k", "vcvars64" }
-  cmd.args = args
-  return cmd
-end
-
--- Visual Studio Compiler (x86)
-local function vcvars32_domain(cmd)
-  local args = { "cmd.exe", "/k", "vcvars32" }
-  cmd.args = args
-  return cmd
-end
-
--- Add custom domains here
-local domains = {
-  wezterm.exec_domain("Command Prompt", cmd_prompt_domain, get_label),
-  wezterm.exec_domain("PowerShell", powershell_domain, get_label),
-  wezterm.exec_domain("Visual Studio Compiler (x64)", vcvars64_domain, get_label),
-  wezterm.exec_domain("Visual Studio Compiler (x86)", vcvars32_domain, get_label)
-}
 
 return domains
