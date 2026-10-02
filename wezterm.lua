@@ -1,5 +1,5 @@
 -- Imports
-local domains = require("wez.domains")
+local Domains = require("wez.domains")
 local commands = require("wez.commands")
 local format_tab = require("wez.tab")
 
@@ -30,7 +30,8 @@ wezterm.on("format-tab-title", format_tab)
 config.window_background_opacity = 0.95
 
 -- Domains
-config.exec_domains = domains
+Domains.load_domains()
+config.exec_domains = Domains.domains 
 
 -- Commands
 local act = wezterm.action
