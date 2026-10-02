@@ -46,12 +46,13 @@ Macros.load_macros()
 -- Key Bindings
 config.keys = {
   {
-    key = 'm',
+    key = 'M',
     mods = 'CTRL',
     action = wezterm.action.InputSelector {
       action = Macros.selection_callback,
       title = "Macros",
-      choices = Macros.choices 
+      choices = Macros.choices,
+      fuzzy = true
     }
   }
 }
