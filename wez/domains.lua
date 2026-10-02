@@ -25,13 +25,11 @@ function Domains.load_domains()
   local file, err = io.open(".wez/domains.json", 'r')
   if file then
     local content = file:read("*all")
-    wezterm.log_info(content)
+    -- wezterm.log_info(content)
     file:close()
 
     local data = wezterm.json_parse(content)
     for index, domain_info in ipairs(data) do
-      wezterm.log_info(domain_info.alias)
-      wezterm.log_info(domain_info.exec)
       table.insert(Domains.domains, wezterm.exec_domain(domain_info.alias, make_domain_func(domain_info.exec), domain_info.alias))
     end
   end

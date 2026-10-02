@@ -1,5 +1,6 @@
 -- Imports
 local Domains = require("wez.domains")
+local Macros = require("wez.macros")
 local commands = require("wez.commands")
 local format_tab = require("wez.tab")
 
@@ -39,26 +40,18 @@ wezterm.on("augment-command-palette", function(window, pane)
   return commands
 end)
 
+-- Macros
+Macros.load_macros()
+
 -- Key Bindings
 config.keys = {
   {
     key = 'm',
     mods = 'CTRL',
     action = wezterm.action.InputSelector {
-      action = wezterm.action_callback(function(window, pane, id, label)
-        pane:send_text(id .. "\r\n")
-      end),
-      title = "Macro",
-      choices = {
-        {
-          label = "ls",
-          id = "ls"
-        },
-        {
-          label = "ls -la",
-          id = "ls -la"
-        }
-      }
+      action = Macros.selection_callback,
+      title = "Macros",
+      choices = Macros.choices 
     }
   }
 }
