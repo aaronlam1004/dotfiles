@@ -1,7 +1,5 @@
 local wezterm = require 'wezterm'
 
--- Local --
-
 -- Module --
 local Macros = {}
 
@@ -18,30 +16,35 @@ end)
 Macros.selection_callback = wezterm.action_callback(function(window, pane, id, label)
   local exec = Macros.macros[label].exec
   local args = Macros.macros[label].args
-  if args then
-    for index, key in ipairs(args) do
-      window:perform_action (
-        wezterm.action.PromptInputLine {
-          description = exec .. " [" .. key .. "]",
-          action = wezterm.action_callback(function(inner_window, inner_pane, line)
-            exec = string.gsub(exec, key, line)
-            if index == #args then
-              wezterm.emit("macro-trigger", window, pane, exec)
+  if args and #args > 0 then
+    window:perform_action (
+      wezterm.action.PromptInputLine {
+        description = exec .. " (" .. table.concat(args, ",") .. ")",
+        action = wezterm.action_callback(function(inner_window, inner_pane, line)
+          local words = {}
+          for word in string.gmatch(line, "([^,]+)") do
+            table.insert(words, word)
+          end 
+
+          if #args == #words then
+            for index = 1, #words do
+              exec = string.gsub(exec, args[index], words[index]) 
             end
-          end)
-      }, pane) 
-    end
+          end
+          wezterm.emit("macro-trigger", window, pane, exec)
+        end)
+    }, pane) 
   else
     wezterm.emit("macro-trigger", window, pane, exec)
   end
 end)
 
 -- Load macros from file
-function Macros.load_macros()
+function Macros.load()
   local file, err = io.open(".wez/macros.json", 'r')
   if file then
     local content = file:read("*all")
-    wezterm.log_info(content)
+    -- wezterm.log_info(content)
     file:close()
 
     local data = wezterm.json_parse(content)
@@ -59,5 +62,13 @@ function Macros.load_macros()
     end
   end
 end
+
+Macros.load()
+Macros.input_action = wezterm.action.InputSelector {
+  action = Macros.selection_callback,
+  title = "Macros",
+  choices = Macros.choices,
+  fuzzy = true
+}
 
 return Macros

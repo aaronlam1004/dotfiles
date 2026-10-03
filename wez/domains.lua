@@ -21,7 +21,7 @@ local Domains = {}
 Domains.domains = {}
 
 -- Load domains
-function Domains.load_domains()
+function Domains.load(config)
   local file, err = io.open(".wez/domains.json", 'r')
   if file then
     local content = file:read("*all")
@@ -33,6 +33,7 @@ function Domains.load_domains()
       table.insert(Domains.domains, wezterm.exec_domain(domain_info.alias, make_domain_func(domain_info.exec), domain_info.alias))
     end
   end
+  config.exec_domains = Domains.domains 
 end
 
 return Domains

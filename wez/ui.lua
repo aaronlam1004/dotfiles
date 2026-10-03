@@ -1,4 +1,3 @@
--- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
 -- Processes
@@ -41,4 +40,4 @@ local function format_tab(tab, tabs, pane, config, hover, max_width)
   })
 end
 
-return format_tab
+wezterm.on("format-tab-title", format_tab)

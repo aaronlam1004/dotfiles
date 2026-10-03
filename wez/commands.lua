@@ -1,7 +1,18 @@
--- Pull in the wezterm API
 local wezterm = require 'wezterm'
-local act = wezterm.action
 
-local commands = {}
+-- Imports
+local Macros = require("wez.macros")
 
-return commands
+local Commands = {}
+
+wezterm.on("augment-command-palette", function(window, pane)
+  return {
+    {
+      brief = "Macros",
+      icon = "cod_debug_continue",
+      action = Macros.input_action
+    }
+  }
+end)
+
+return Commands
