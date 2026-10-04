@@ -22,7 +22,7 @@ Domains.domains = {}
 
 -- Load domains
 function Domains.load(config)
-  local file, err = io.open(".wez/domains.json", 'r')
+  local file, err = io.open("wez/.wez/domains.json", 'r')
   if file then
     local content = file:read("*all")
     -- wezterm.log_info(content)

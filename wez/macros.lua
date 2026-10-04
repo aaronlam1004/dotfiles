@@ -41,7 +41,7 @@ end)
 
 -- Load macros from file
 function Macros.load()
-  local file, err = io.open(".wez/macros.json", 'r')
+  local file, err = io.open("wez/.wez/macros.json", 'r')
   if file then
     local content = file:read("*all")
     -- wezterm.log_info(content)

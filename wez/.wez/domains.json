@@ -1,0 +1,18 @@
+[
+    {
+        "alias": "PowerShell",
+        "exec": ["powershell"]
+    },
+    {
+        "alias": "Visual Studio Compiler (x64)",
+        "exec": ["cmd.exe", "/c", "vcvars64" ]
+    },
+    {
+        "alias": "Visual Studio Compiler (x86)",
+        "exec": ["cmd.exe", "/c", "vcvars32" ]
+    },
+    {
+        "alias": "docker",
+        "exec": ["cmd", "/c", "docker", "exec", "-it", "", "/bin/bash"]
+    }
+]
