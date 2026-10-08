@@ -8,12 +8,16 @@ Macros.choices = {}
 Macros.macros = {}
 
 -- Trigger macro call
-wezterm.on("macro-trigger", function(window, pane, exec)
-  pane:send_text(exec .. "\r\n")
+wezterm.on("macro-trigger", function(window, pane, calls)
+  wezterm.log_info(calls)
+  for index, call in ipairs(calls) do
+    pane:send_text(call .. "\r\n")
+  end
 end)
 
 -- Custom action callback for macros
 Macros.selection_callback = wezterm.action_callback(function(window, pane, id, label)
+  local calls = {}
   local exec = Macros.macros[label].exec
   local args = Macros.macros[label].args
   if args and #args > 0 then
@@ -31,11 +35,18 @@ Macros.selection_callback = wezterm.action_callback(function(window, pane, id, l
               exec = string.gsub(exec, args[index], words[index]) 
             end
           end
-          wezterm.emit("macro-trigger", window, pane, exec)
+
+          for call in string.gmatch(exec, "([^__RET__]+)") do
+            table.insert(calls, call)
+          end
+          wezterm.emit("macro-trigger", window, pane, calls)
         end)
     }, pane) 
   else
-    wezterm.emit("macro-trigger", window, pane, exec)
+    for call in string.gmatch(exec, "([^__RET__]+)") do
+      table.insert(calls, call)
+    end
+    wezterm.emit("macro-trigger", window, pane, calls)
   end
 end)
 
