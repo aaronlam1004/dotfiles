@@ -8,10 +8,11 @@ Macros.choices = {}
 Macros.macros = {}
 
 -- Trigger macro call
-wezterm.on("macro-trigger", function(window, pane, calls)
+wezterm.on("macro-trigger", function(window, pane, calls, delay_ms)
   wezterm.log_info(calls)
   for index, call in ipairs(calls) do
     pane:send_text(call .. "\r\n")
+    wezterm.sleep_ms(delay_ms)
   end
 end)
 
@@ -20,6 +21,7 @@ Macros.selection_callback = wezterm.action_callback(function(window, pane, id, l
   local calls = {}
   local exec = Macros.macros[label].exec
   local args = Macros.macros[label].args
+  local delay_ms = Macros.macros[label].delay_ms
   if args and #args > 0 then
     window:perform_action (
       wezterm.action.PromptInputLine {
@@ -36,17 +38,17 @@ Macros.selection_callback = wezterm.action_callback(function(window, pane, id, l
             end
           end
 
-          for call in string.gmatch(exec, "([^__RET__]+)") do
+          for call in string.gmatch(exec, "([^<RET>]+)") do
             table.insert(calls, call)
           end
-          wezterm.emit("macro-trigger", window, pane, calls)
+          wezterm.emit("macro-trigger", window, pane, calls, delay_ms)
         end)
     }, pane) 
   else
-    for call in string.gmatch(exec, "([^__RET__]+)") do
+    for call in string.gmatch(exec, "([^<RET>]+)") do
       table.insert(calls, call)
     end
-    wezterm.emit("macro-trigger", window, pane, calls)
+    wezterm.emit("macro-trigger", window, pane, calls, delay_ms)
   end
 end)
 
@@ -67,7 +69,8 @@ function Macros.load()
 
       local macro = {
         exec = macro_info.exec,
-        args = macro_info.args
+        args = macro_info.args,
+        delay_ms = macro_info.delay_ms or 0
       }
       Macros.macros[macro_info.alias] = macro
     end
