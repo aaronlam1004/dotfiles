@@ -11,10 +11,11 @@
      "8d7ecc170b98a159f3dd10652bd72870151b7b46cfa3918fa9bc0da86f799157"
      default))
  '(diff-whitespace-style '(space-mark tab-mark newline-mark) nil (whitespace))
- '(display-line-numbers-type 'relative)
+ '(display-line-numbers-type t)
  '(global-display-line-numbers-mode t)
  '(global-whitespace-mode t)
  '(keyboard-coding-system 'utf-8-unix)
+ '(package-selected-packages '(corfu lsp-mode))
  '(tool-bar-mode nil)
  '(whitespace-style '(tab-mark)))
 (custom-set-faces
