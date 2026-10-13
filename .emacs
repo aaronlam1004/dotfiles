@@ -76,4 +76,6 @@
   :hook (c-mode . lsp-deferred)
         (c++-mode . lsp-deferred)
         (python-mode .lsp-deferred)
-  :custom (lsp-completion-mode :capf))
+  :custom (lsp-completion-mode :capf)
+          (lsp-lens-enable nil)
+          (lsp-enable-hover nil))

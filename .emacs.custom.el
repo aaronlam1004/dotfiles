@@ -11,7 +11,6 @@
      "8d7ecc170b98a159f3dd10652bd72870151b7b46cfa3918fa9bc0da86f799157"
      default))
  '(diff-whitespace-style '(space-mark tab-mark newline-mark) nil (whitespace))
- '(display-line-numbers-type t)
  '(global-display-line-numbers-mode t)
  '(global-whitespace-mode t)
  '(keyboard-coding-system 'utf-8-unix)
@@ -23,4 +22,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "SF Mono" :foundry "outline" :slant normal :weight regular :height 100 :width normal)))))
+ '(default ((t (:family "JetBrainsMono NF" :foundry "outline" :slant normal :weight regular :height 113 :width normal)))))
