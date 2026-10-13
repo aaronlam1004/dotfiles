@@ -4,14 +4,14 @@ local Self = {}
 
 -- Start maximized
 wezterm.on('gui-startup', function(cmd)
-  local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
-  window:gui_window():maximize()
+  -- local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+  -- window:gui_window():maximize()
 end)
 
 -- Load self configurations
 function Self.load(config)
   -- [Font]
-  config.font = wezterm.font "SF Mono"
+  config.font = wezterm.font "JetBrainsMono Nerd Font"
   config.font_size = 11
 
   -- [Color Scheme]
