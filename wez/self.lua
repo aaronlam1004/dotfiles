@@ -1,11 +1,13 @@
 local wezterm = require 'wezterm'
 
+local Backgrounds = require("wez.backgrounds")
+
 local Self = {}
 
 -- Start maximized
 wezterm.on('gui-startup', function(cmd)
-  -- local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
-  -- window:gui_window():maximize()
+  local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+  window:gui_window():maximize()
 end)
 
 -- Load self configurations
@@ -22,20 +24,7 @@ function Self.load(config)
 
   -- [Appearance]
   config.window_background_opacity = 1.0
-  config.background = {
-    {
-      source = {
-        File = "wez/.wez/wallpapers/satoru-gojo-neon.png"
-      },
-      hsb = {
-        brightness = 0.05
-      },
-      width = "100%",
-      height = "100%",
-      repeat_x = "NoRepeat",
-      repeat_y = "NoRepeat"
-    }
-  }
+  config.background = Backgrounds.load("wez/.wez/wallpapers/tanjiro-kamado.jpg")
 end
 
 return Self
