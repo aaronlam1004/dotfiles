@@ -13,7 +13,7 @@ end)
 -- Load self configurations
 function Self.load(config)
   -- [Font]
-  config.font = wezterm.font "JetBrainsMono Nerd Font"
+  -- config.font = wezterm.font "JetBrains"
   config.font_size = 11
 
   -- [Color Scheme]

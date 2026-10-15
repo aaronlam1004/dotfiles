@@ -1,12 +1,12 @@
 local wezterm = require 'wezterm'
 
 -- Imports
-require("wez.ui")
 local Self = require("wez.self")
 local Keys = require("wez.keys")
 local Domains = require("wez.domains")
 local Backgrounds = require("wez.backgrounds")
 local Commands = require("wez.commands")
+local Ui = require("wez.ui")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -27,6 +27,9 @@ Keys.load(config)
 
 -- Commands
 Commands.load()
+
+-- UI
+Ui.load(config)
 
 -- Return the configuration to WezTerm
 return config

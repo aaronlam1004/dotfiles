@@ -1,43 +1,41 @@
 local wezterm = require 'wezterm'
 
--- Processes
-local processes = {
-  ["cmd"] = "cmd",
-  ["powershell"] = "cmd",
-  ["nvim"] = "nvim",
-  ["docker"] = "docker"
-}
+local Ui = {}
 
--- Icons
-local icons = {
-  ["terminal"] = wezterm.nerdfonts.dev_terminal,
-  ["nvim"] = wezterm.nerdfonts.dev_vim,
-  ["docker"] = wezterm.nerdfonts.linux_docker
+-- Processes (name, icon)
+local processes = {
+  ["cmd"]    = { alias = "cmd", icon = wezterm.nerdfonts.dev_terminal },
+  ["nvim"]   = { alias = "nvim", icon = wezterm.nerdfonts.dev_vim },
+  ["docker"] = { alias = "docker", icon = wezterm.nerdfonts.linux_docker }
 }
 
 -- Get process name from full process name
 local function get_process(tab)
   local process = tab.active_pane.foreground_process_name:match("([^/\\]+)%.exe$") or
                   tab.active_pane.foreground_process_name:match("([^/\\]+)$")
-  process = processes[process] or processes["cmd"]
   return process
-end
-
--- Get icon from process
-local function get_process_icon(process)
-  local icon = icons[process] or icons["terminal"]
-  return icon
 end
 
 -- Format tab in terminal
 local function format_tab(tab, tabs, pane, config, hover, max_width)
   local process = get_process(tab)
-  local icon = get_process_icon(process)
+  local process_info = processes[process] or process["cmd"]
+  local title = process_info.icon .. " " .. process_info.alias .. "@aaron"
+  if process_info.alias == "docker" then
+    title = process_info.icon .. " " .. tab.active_pane.title
+  end
   return wezterm.format({
-    { Text = icon .. " " .. process .. "@aaron" },
-    -- { Text = process },
-    -- { Text = "@aaron" },
+    { Text = title },
   })
 end
 
-wezterm.on("format-tab-title", format_tab)
+function Ui.load(config)
+  config.window_frame = {
+    inactive_titlebar_bg = "none",
+    active_titlebar_bg = "none",
+  }
+  config.hide_tab_bar_if_only_one_tab = true
+  wezterm.on("format-tab-title", format_tab)
+end
+
+return Ui
