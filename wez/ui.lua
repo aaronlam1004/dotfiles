@@ -19,7 +19,7 @@ end
 -- Format tab in terminal
 local function format_tab(tab, tabs, pane, config, hover, max_width)
   local process = get_process(tab)
-  local process_info = processes[process] or process["cmd"]
+  local process_info = processes[process] or processes["cmd"]
   local title = process_info.icon .. " " .. process_info.alias .. "@aaron"
   if process_info.alias == "docker" then
     title = process_info.icon .. " " .. tab.active_pane.title
