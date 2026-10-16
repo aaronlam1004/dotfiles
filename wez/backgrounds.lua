@@ -13,6 +13,9 @@ Backgrounds.selection_callback = wezterm.action_callback(function(window, pane, 
 end)
 
 function Backgrounds.load(wallpaper)
+  if wallpaper == "None" then
+    return {}
+  end
   return {
     {
       source = {
@@ -33,6 +36,7 @@ function Backgrounds.list(wallpapers)
     local choice = { label = wallpaper }
     table.insert(Backgrounds.choices, choice)
   end
+  table.insert(Backgrounds.choices, { label = "None" })
 end
  
 return Backgrounds
