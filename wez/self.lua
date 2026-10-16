@@ -19,9 +19,6 @@ function Self.load(config)
   -- [Color Scheme]
   config.color_scheme = "Kanagawa (Gogh)"
 
-  -- [Tabs
-  config.tab_bar_at_bottom = true
-
   -- [Appearance]
   config.window_background_opacity = 1.0
   config.background = Backgrounds.load("wez/.wez/wallpapers/tanjiro-kamado.jpg")
