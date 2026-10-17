@@ -64,18 +64,20 @@
 (package-initialize)
 
 (use-package corfu
-  :ensure t
+  :init (global-corfu-mode)
   :custom (corfu-auto t)
           (corfu-auto-delay 0.2)
-          (corfu-auto-prefix 2)
-  :init (global-corfu-mode))
+          (corfu-auto-prefix 1))
 
+(use-package eglot
+  :hook (python-mode . eglot-ensure))
 
-(use-package lsp-mode
-  :ensure t
-  :hook (c-mode . lsp-deferred)
-        (c++-mode . lsp-deferred)
-        (python-mode .lsp-deferred)
-  :custom (lsp-completion-mode :capf)
-          (lsp-lens-enable nil)
-          (lsp-enable-hover nil))
+; (use-package lsp-mode
+;   :ensure t
+;   :hook (c-mode . lsp-deferred)
+;         (c++-mode . lsp-deferred)
+;         (python-mode .lsp-deferred)
+;   :custom (lsp-completion-prover :none))
+
+; (set-frame-parameter (selected-frame) 'alpha '(85 85))
+; (add-to-list 'default-frame-alist '(alpha 85 85))
