@@ -13,8 +13,8 @@ end)
 -- Load self configurations
 function Self.load(config)
   -- [Font]
-  config.font = wezterm.font("MesloLGM Nerd Font Mono", { weight = "Regular" })
-  config.font_size = 11
+  config.font = wezterm.font("Agave Nerd Font Mono", { weight = "Regular" })
+  config.font_size = 13
 
   -- [Color Scheme]
   config.color_scheme = "Kanagawa (Gogh)"
