@@ -44,19 +44,10 @@
 (add-to-list 'load-path "~/.emacs.local/themes/catppuccin")
 (add-to-list 'load-path "~/.emacs.local/themes/kanagawa")
 (add-to-list 'load-path "~/.emacs.local/themes/doom")
+(add-to-list 'load-path "~/.emacs.local/themes/spacemacs")
 
-; Kanagawa
-(require 'kanagawa-themes)
-(load-theme 'kanagawa-wave t)
-
-; catppuccin
-; (require 'catppuccin-theme)
-; (setq catppuccin-flavor 'latte)
-; (load-theme 'catppuccin t)
-
-; Doom
-; (require 'doom-themes)
-; (load-theme 'doom-outrun-electric t)
+(require 'spacemacs-theme)
+(load-theme 'spacemacs-dark t)
 
 ;; [Packages]
 (require 'package)
