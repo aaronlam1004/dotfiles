@@ -3,10 +3,10 @@
 (setq custom-file "~/.emacs.custom.el")
 (load custom-file)
 
+;; [Editor]
 ; Auto-update configuration
 (global-auto-revert-mode 1)
 
-;; [Editor]
 ; Window
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
@@ -61,9 +61,12 @@
           (corfu-auto-prefix 1))
 
 (use-package eglot
+  :custom (eglot-ignored-server-capabilities '(:documentFormattingProvider
+                                               :documentRangeFormattingProvider
+                                               :documentOnTypeFormattingProvider))
   :hook (python-mode . eglot-ensure)
-  :hook (c-mode . eglot-ensure)
-  :hook (c++-mode . eglot-ensure))
+        (c-mode . eglot-ensure)
+        (c++-mode . eglot-ensure))
 
 ; (use-package lsp-mode
 ;   :ensure t
