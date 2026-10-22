@@ -4,7 +4,7 @@
 (load custom-file)
 
 ; Auto-update configuration
-(global-auto-revert-mode -1)
+(global-auto-revert-mode 1)
 
 ;; [Editor]
 ; Window
@@ -61,7 +61,9 @@
           (corfu-auto-prefix 1))
 
 (use-package eglot
-  :hook (python-mode . eglot-ensure))
+  :hook (python-mode . eglot-ensure)
+  :hook (c-mode . eglot-ensure)
+  :hook (c++-mode . eglot-ensure))
 
 ; (use-package lsp-mode
 ;   :ensure t
