@@ -66,12 +66,5 @@
         (c-mode . eglot-ensure)
         (c++-mode . eglot-ensure))
 
-; (use-package lsp-mode
-;   :ensure t
-;   :hook (c-mode . lsp-deferred)
-;         (c++-mode . lsp-deferred)
-;         (python-mode .lsp-deferred)
-;   :custom (lsp-completion-prover :none))
-
-; (set-frame-parameter (selected-frame) 'alpha '(85 85))
-; (add-to-list 'default-frame-alist '(alpha 85 85))
+; (set-frame-parameter (selected-frame) 'alpha '(95 95))
+; (add-to-list 'default-frame-alist '(alpha 95 95))
