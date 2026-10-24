@@ -8,8 +8,6 @@
 (global-auto-revert-mode 1)
 
 ; Window
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
 (show-paren-mode 1)
 
 ; Line Endings

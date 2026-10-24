@@ -13,9 +13,10 @@
  '(diff-whitespace-style '(space-mark tab-mark newline-mark) nil (whitespace))
  '(global-display-line-numbers-mode t)
  '(global-whitespace-mode t)
+ '(global-window-tool-bar-mode nil)
  '(keyboard-coding-system 'utf-8-unix)
  '(package-selected-packages '(corfu lsp-mode))
- '(tool-bar-mode nil)
+ '(tool-bar-mode t)
  '(whitespace-style '(tab-mark)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
