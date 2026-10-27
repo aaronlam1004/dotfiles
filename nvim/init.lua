@@ -1,4 +1,5 @@
 require('config.lazy')
+require('config.space-nvim')
 require('self.settings')
 require('self.commands')
 require('self.keymap')
