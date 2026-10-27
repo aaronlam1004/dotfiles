@@ -1,3 +1,5 @@
+vim.opt.termguicolors = true
+
 -- Colorscheme
 vim.cmd.colorscheme "space-nvim"
 

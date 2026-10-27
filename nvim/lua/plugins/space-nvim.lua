@@ -1,3 +1,5 @@
 return {
-    'Th3Whit3Wolf/space-nvim', version = '*'
+    'Th3Whit3Wolf/space-nvim',
+    lazy = false,
+    priority = 1000
 }
