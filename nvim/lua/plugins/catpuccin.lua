@@ -1,3 +1,3 @@
 return {
-    'catppuccin/nvim', version = '*'
+  'catppuccin/nvim', version = '*'
 }

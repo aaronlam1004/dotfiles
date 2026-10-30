@@ -1,3 +1,3 @@
 return {
-    'rebelot/kanagawa.nvim', version = '*'
+  'rebelot/kanagawa.nvim', version = '*'
 }

@@ -1,5 +1,5 @@
 return {
-    'Th3Whit3Wolf/space-nvim',
-    lazy = false,
-    priority = 1000
+  'Th3Whit3Wolf/space-nvim',
+  lazy = false,
+  priority = 1000
 }
