@@ -31,27 +31,28 @@ local function format_tab(tab, tabs, pane, config, hover, max_width)
   end
 
   title = " " .. title .. " "
+  if utf8.len(title) > max_width then
+    title = wezterm.truncate_right(title, max_width - 3) .. "..."
+  end
 
   local BASE_TAB <const> = {
     { Background = { Color = TRANSPARENT_COLOR } },
     { Text = title }
   }
 
-  local formatted_tab = {}
-  if tab.is_active or hover then
-    local background_color = BACKGROUND_ACTIVE_COLOR
-    if hover then
-      background_color = BACKGROUND_HOVER_COLOR
-    end
-
-    local FORMATTED_TAB_TITLE <const> = {
-      { Background = { Color = background_color } },
+  local formatted_tab = BASE_TAB
+  if tab.is_active then
+    formatted_tab = {
+      { Background = { Color = BACKGROUND_ACTIVE_COLOR } },
       { Foreground = { Color = FOREGROUND_ACTIVE_COLOR } },
       { Text =  title },
     }
-    table.move(FORMATTED_TAB_TITLE, 1, #FORMATTED_TAB_TITLE, #formatted_tab + 1, formatted_tab)
-  else
-    formatted_tab = BASE_TAB
+  elseif hover then
+    formatted_tab = {
+      { Background = { Color = BACKGROUND_ACTIVE_COLOR } },
+      { Foreground = { Color = FOREGROUND_ACTIVE_COLOR } },
+      { Text =  title },
+    }
   end
   return wezterm.format(formatted_tab)
 end
@@ -66,7 +67,7 @@ function Ui.load(config)
       background = TRANSPARENT_COLOR
     }
   }
-  -- config.use_fancy_tab_bar = false
+  config.use_fancy_tab_bar = false
   config.hide_tab_bar_if_only_one_tab = true
   config.tab_bar_at_bottom = true
   wezterm.on("format-tab-title", format_tab)
