@@ -5,12 +5,12 @@
         "args": {}
     },
     {
-        "alias": "tio",
+        "alias": "picocom",
         "exec": "tio -b $1 $2",
         "args": ["$1", "$2"]
     },
     {
-        "alias": "tio (115200)",
+        "alias": "picocom (115200)",
         "exec": "tio -b 115200 $1",
         "args": ["$1"]
     }
