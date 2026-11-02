@@ -49,7 +49,7 @@ local function format_tab(tab, tabs, pane, config, hover, max_width)
     }
   elseif hover then
     formatted_tab = {
-      { Background = { Color = BACKGROUND_ACTIVE_COLOR } },
+      { Background = { Color = BACKGROUND_HOVER_COLOR } },
       { Foreground = { Color = FOREGROUND_ACTIVE_COLOR } },
       { Text =  title },
     }
