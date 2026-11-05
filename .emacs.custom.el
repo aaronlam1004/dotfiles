@@ -14,13 +14,14 @@
  '(global-display-line-numbers-mode t)
  '(global-whitespace-mode t)
  '(global-window-tool-bar-mode nil)
+ '(indent-tabs-mode nil)
  '(keyboard-coding-system 'utf-8-unix)
  '(package-selected-packages '(corfu lsp-mode))
- '(tool-bar-mode t)
+ '(tab-bar-mode t)
  '(whitespace-style '(tab-mark)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Agave Nerd Font Mono" :foundry "outline" :slant normal :weight regular :height 132 :width normal)))))
+ '(default ((t (:family "Agave Nerd Font Mono" :foundry "outline" :slant normal :weight regular :height 120 :width normal)))))
