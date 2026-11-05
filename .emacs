@@ -47,6 +47,10 @@
 (require 'spacemacs-theme)
 (load-theme 'spacemacs-dark t)
 
+;; [Local Packages]
+(add-to-list 'load-path "~/.emacs.local/site-lisp/emacs-telescope")
+(require 'emacs-telescope)
+
 ;; [Packages]
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)

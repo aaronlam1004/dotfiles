@@ -4,3 +4,6 @@
 [submodule "SF-Mono-Nerd-Font"]
 	path = SF-Mono-Nerd-Font
 	url = https://github.com/epk/SF-Mono-Nerd-Font.git
+[submodule ".emacs.local/packages/emacs-telescope"]
+	path = .emacs.local/packages/emacs-telescope
+	url = https://github.com/pawanspace/emacs-telescope
