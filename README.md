@@ -8,11 +8,9 @@ Configurations and dotfiles for the following:
 - Emacs
 - WezTerm
 
-## Emacs
+## LSP
 
-### LSP
-
-For completions (`corfu`) and LSP uses the following:
+For LSP uses the following:
 
 - Python (`python-lsp-server`)
 - C++/C (`clangd`)
