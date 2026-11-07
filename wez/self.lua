@@ -14,7 +14,7 @@ end)
 function Self.load(config)
   -- [Font]
   config.font = wezterm.font("Agave Nerd Font Mono", { weight = "Regular" })
-  config.font_size = 13
+  config.font_size = 12
 
   -- [Color Scheme]
   config.color_scheme = "Kanagawa (Gogh)"
