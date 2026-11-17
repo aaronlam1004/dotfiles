@@ -21,7 +21,7 @@ function Self.load(config)
 
   -- [Appearance]
   config.window_background_opacity = 1.0
-  config.background = Backgrounds.load("wez/.wez/wallpapers/tanjiro-kamado.jpg")
+  config.background = Backgrounds.load("wez/.wez/wallpapers/cherry-blossoms.jpg")
 end
 
 return Self
