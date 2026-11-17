@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 
 local Ui = {}
 
-local BACKGROUND_ACTIVE_COLOR <const> = "#1B3C53"
+local BACKGROUND_ACTIVE_COLOR <const> = "#B543AA"
 local BACKGROUND_HOVER_COLOR <const> = "#456882"
 local FOREGROUND_ACTIVE_COLOR <const> = "#D2C1B6"
 local TRANSPARENT_COLOR <const> = "rgba(0, 0, 0, 0)"
